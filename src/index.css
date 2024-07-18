@@ -11,6 +11,49 @@ header {
     text-align: center;
 }
 
+/*header features with animation*/
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 50px; /* Adjust the height as needed */
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-around; /* Space out the links evenly */
+    flex-grow: 1;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .nav-container a {
+    color: #000;
+    text-decoration: none;
+    padding: 10px;
+  }
+  
+  .nav-container a:hover {
+    text-decoration: underline;
+  }
+  
+  .login-button a {
+    color: #000;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+  }
+  
+  .login-button a:hover {
+    background-color: #000;
+    color: #fff;
+  }
+  
+
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -19,13 +62,6 @@ nav ul {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-header {
-    background-color: #282c34;
-    padding: 20px;
-    color: white;
-    text-align: center;
 }
 
 main {
