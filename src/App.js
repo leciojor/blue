@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from './components/Header';
 import Details from './components/Details';
-import ContactForm from './components/ContactForm';
 import './index.css';
 
 function App() {
