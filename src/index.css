@@ -56,6 +56,203 @@ header {
     padding: 20px;
     text-align: center;
 }
+/*Service features*/
+#service {
+    position: relative;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.horizontal-scroll {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    padding: 20px;
+}
+
+.service-component {
+    min-width: 200px;
+    margin: 0 10px;
+    text-align: center;
+}
+
+.service-component img {
+    width: 100%;
+    height: auto;
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.nav-button.left {
+    left: 10px;
+}
+
+.nav-button.right {
+    right: 10px;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+}
+
+.popup-content .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/*faq features*/
+#faq {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#faq h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.faq-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.faq-item:hover {
+    background-color: #f9f9f9;
+}
+
+.faq-question {
+    padding: 15px;
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-answer.active {
+    max-height: 150px; 
+    padding: 15px;
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+}
+
+/*bottom features*/
+#bottom {
+    padding: 20px;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+}
+
+.contact-info h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.map {
+    display: flex;
+    justify-content: center;
+}
+
+.map iframe {
+    border: none;
+    width: 100%;
+    max-width: 600px;
+    height: 450px;
+}
+
+
+
+/*about features*/
+#about {
+    padding: 20px;
+    text-align: center;
+    animation: popUp 2s forwards;
+}
+
+.main-text {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    animation: popUp 2s forwards;
+}
+
+.rectangular-components {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    animation: popUp 2s forwards;
+}
+
+.rectangle {
+    background-color: #f0f0f0;
+    padding: 20px;
+    width: 200px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    animation: popUp 2s forwards;
+}
+
+.rectangle p {
+    margin: 0;
+    animation: popUp 2s forwards;
+}
+
 
 /*header features with animation*/
 .header-content {
