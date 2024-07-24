@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = () => {
     return (
-        <section id="home">
+        <section id="home" className='home'>
             <div className="center-content">
                 <img src='' alt="Main Title" className="main-title" />
                 <button 

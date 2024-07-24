@@ -21,7 +21,7 @@ const Service = () => {
     };
 
     return (
-        <section id="service">
+        <section id="Impressoras" className='service'>
             <button className="nav-button left" onClick={() => handleScroll('left')}>&lt;</button>
             <div className="horizontal-scroll" ref={scrollRef}>
                 <div className="service-component">

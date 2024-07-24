@@ -1,3 +1,18 @@
+/*general section configs*/
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #ff007f, #ffea00, #00aaff);
+    background-size: 600% 600%;
+    animation: gradientAnimation 15s linear infinite;
+  }  
+
+  .about, .faq, .service, .home{
+    height: 100vh;  
+  }
+
+
 /*home features*/
 #home {
     position: relative;
@@ -260,13 +275,13 @@ header {
   } */
   
   .logo{
-    position: fixed;
-    left: 5; 
+    position: absolute;
+    left: 50px; 
   }  
 
   .login-button {
-    position: fixed;
-    right: 5;
+    position: absolute;
+    right: 50px;
   }
 
   .logo,
@@ -280,6 +295,10 @@ header {
   .login-button.hovered {
     transform: scale(1.1);
     color: #f00; 
+  }
+
+  .nav-container a {
+    margin: 0 15px; 
   }
   /**/
 
@@ -354,6 +373,20 @@ footer {
 
 
 
+/*keyframes*/
+
+@keyframes gradientBackground {
+    0% {
+      background: linear-gradient(45deg, #ff007f, #ffea00, #00aaff);
+    }
+    50% {
+      background: linear-gradient(45deg, #ff007f, #00aaff, #ffea00);
+    }
+    100% {
+      background: linear-gradient(45deg, #00aaff, #ff007f, #ffea00);
+    }
+  }
+
 @keyframes popUp {
     0% {
         transform: scale(0);
@@ -364,6 +397,15 @@ footer {
         opacity: 1;
     }
 }
+@keyframes flowingGradient {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
+  }
+
 
 
 

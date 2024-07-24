@@ -13,7 +13,7 @@ const Header = () => {
         <img src="logo.png" alt="Logo" />
       </div>
       <nav className="nav-container">
-        {['   Sobre nós   ', '   Impressoras   ', '   Perguntas frequentes   '].map((item) => (
+        {['Sobre nós', 'Impressoras', 'Perguntas frequentes'].map((item) => (
           <a
             key={item}
             href={`#${item}`}

@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
     return (
-        <section id="about">
+        <section id="Sobre nós" className='about'>
             <div className="main-text">
                 This is the main big text
             </div>
