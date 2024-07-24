@@ -254,48 +254,34 @@ header {
 }
 
 
-/*header features with animation*/
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/*header features*/
+/* .transparent-header {
+    
+  } */
+  
+  .logo{
+    position: fixed;
+    left: 5; 
+  }  
+
+  .login-button {
+    position: fixed;
+    right: 5;
+  }
+
+  .logo,
+  .nav-container a,
+  .login-button {
+    transition: transform 0.3s ease, color 0.3s ease; 
   }
   
-  .logo img {
-    height: 50px;
+  .logo.hovered,
+  .nav-container a.hovered,
+  .login-button.hovered {
+    transform: scale(1.1);
+    color: #f00; 
   }
-  
-  .nav-container {
-    display: flex;
-    justify-content: space-around; 
-    flex-grow: 1;
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-  
-  .nav-container a {
-    color: #000;
-    text-decoration: none;
-    padding: 10px;
-  }
-  
-  .nav-container a:hover {
-    text-decoration: underline;
-  }
-  
-  .login-button a {
-    color: #000;
-    text-decoration: none;
-    padding: 10px 20px;
-    border: 1px solid #000;
-    border-radius: 5px;
-  }
-  
-  .login-button a:hover {
-    background-color: #000;
-    color: #fff;
-  }
-  
+  /**/
 
 nav ul {
     list-style-type: none;
