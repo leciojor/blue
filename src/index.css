@@ -230,36 +230,52 @@ header {
 
 
 /*about features*/
-#about {
+
+.about {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
     padding: 20px;
-    text-align: center;
-    animation: popUp 2s forwards;
+    position: relative;
 }
 
 .main-text {
     font-size: 36px;
     font-weight: bold;
     margin-bottom: 20px;
+    text-align: center;
+    animation: popUp 2s forwards;
+}
+
+.bottom-container {
+    display: flex;
+    height: calc(100% - 60px); 
+}
+
+.about-text {
+    flex: 1;
+    font-size: 15px;
+    margin-right: 20px; 
     animation: popUp 2s forwards;
 }
 
 .rectangular-components {
+    flex: 1;
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
     animation: popUp 2s forwards;
 }
 
 .rectangle {
     background-color: #f0f0f0;
-    padding: 20px;
-    width: 200px;
-    height: 100px;
+    width: 100px;
+    height: 100px; 
     display: flex;
+    border-radius: 8px;
     align-items: center;
     justify-content: center;
     border: 1px solid #ccc;
-    border-radius: 8px;
     animation: popUp 2s forwards;
 }
 
@@ -267,7 +283,6 @@ header {
     margin: 0;
     animation: popUp 2s forwards;
 }
-
 
 /*header features*/
 /* .transparent-header {
