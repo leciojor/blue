@@ -22,8 +22,8 @@ const Service = () => {
 
     return (
         <section id="Impressoras" className='service'>
-            <button className="nav-button left" onClick={() => handleScroll('left')}>&lt;</button>
             <div className="horizontal-scroll" ref={scrollRef}>
+                <button className="nav-button left" onClick={() => handleScroll('left')}>&lt;</button>
                 <div className="service-component">
                     <img src="image1.jpg" alt="Service 1" />
                     <button onClick={() => handleButtonClick('Service 1 Details')}>More Info</button>
@@ -36,8 +36,8 @@ const Service = () => {
                     <img src="image3.jpg" alt="Service 3" />
                     <button onClick={() => handleButtonClick('Service 3 Details')}>More Info</button>
                 </div>
+                <button className="nav-button right" onClick={() => handleScroll('right')}>&gt;</button>
             </div>
-            <button className="nav-button right" onClick={() => handleScroll('right')}>&gt;</button>
             {popupContent && (
                 <div className="popup">
                     <div className="popup-content">

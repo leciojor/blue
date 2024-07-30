@@ -63,8 +63,9 @@
 html, body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(180deg,  #000000, #15668f, #e71fab, #e3d100);
-    background-size: 600% 600%;
+    height: 100%;
+    background: linear-gradient(180deg,  #0a0e0f, #15668f, #e71fab, #e3d100);
+    background-size: 400% 400%;
     /* animation: gradientBackground 20s infinite; */
   }  
 
@@ -139,10 +140,10 @@ header {
 }
 
 .horizontal-scroll {
-    display: flex;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-    padding: 20px;
+    position: relative; 
+    display: flex; 
+    align-items: center;
+    overflow-x: auto; 
 }
 
 .service-component {
@@ -274,7 +275,6 @@ header {
 
 #faq {
     padding: 20px;
-    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -352,7 +352,6 @@ header {
 
 .map iframe {
     border: none;
-    width: 100%;
     max-width: 600px;
     height: 450px;
 }
