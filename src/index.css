@@ -1,39 +1,44 @@
 /* Mobile devices (up to 600px) */
 @media (max-width: 600px) {
     .main-title {
-        width: 80%;
+        width: 40%;
+        height: 40%
+    }
+    .printer {
+        width: 300x; 
+        height: auto;
     }
 }
 
 /* Tablets and small desktops (601px to 1024px) */
 @media (min-width: 601px) and (max-width: 1024px) {
     .main-title {
-        width: 70%;
+        width: 50%;
+        height: 50%
+    }
+    .printer {
+        position: absolute;
+        width: 500px; 
+        height: auto;
     }
 }
 
 /* Large desktops (1025px and up) */
 @media (min-width: 1025px) {
     .main-title {
-        width: 100%;
-        height: 100%;
+        width: 60%;
+        height: 60%;
+    }
+    .printer {
+        position: absolute;
+        width: 770px; 
+        height: auto;
     }
 }
 
 
 /*keyframes*/
 
-@keyframes gradientBackground {
-    0% {
-      background: linear-gradient(45deg, #ca0b14, #e3d100, #043046);
-    }
-    50% {
-      background: linear-gradient(45deg, #ca0b14, #043046, #e3d100);
-    }
-    100% {
-      background: linear-gradient(45deg, #043046, #ca0b14, #e3d100);
-    }
-  }
 
 @keyframes popUp {
     0% {
@@ -56,31 +61,31 @@
 
 /*general section configs*/
 html, body {
-    height: 100%;
     margin: 0;
     padding: 0;
-    background: linear-gradient(45deg, #ca0b14, #e3d100, #043046);
+    background: linear-gradient(180deg,  #000000, #15668f, #e71fab, #e3d100);
     background-size: 600% 600%;
-    animation: gradientAnimation 5s linear infinite;
+    /* animation: gradientBackground 20s infinite; */
   }  
 
-  .about, .faq, .service, .home{
-    height: 100vh;  
-  }
 
 
 /*home features*/
+.home{
+    height: 70vh;
+}
+
 #home {
     position: relative;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    margin-top: 40px; 
 }
 
 .center-content {
     text-align: center;
+    z-index: 10;
 }
 
 
@@ -90,25 +95,24 @@ html, body {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    animation: popUp 2s forwards;
 }
 
 
 .printer {
     position: absolute;
-    width: 50px; 
-    opacity: 0;
-    animation: popUp 2s forwards;
 }
 
+
 .bottom-left {
-    bottom: 20px;
-    left: 20px;
+    bottom: 0;
+    left: 0;
+    transform: translate(-20%, 20%); 
 }
 
 .top-right {
-    top: 20px;
-    right: 20px;
+    top: 0;
+    right: 0;
+    transform: translate(20%, -20%); 
 }
 
 body {
@@ -124,6 +128,10 @@ header {
     text-align: center;
 }
 /*Service features*/
+.service{
+    height: 40vh;
+}
+
 #service {
     position: relative;
     padding: 20px;
@@ -147,6 +155,7 @@ header {
     width: 100%;
     height: auto;
 }
+
 
 .nav-button {
     position: absolute;
@@ -196,100 +205,19 @@ header {
     cursor: pointer;
 }
 
-/*faq features*/
-#faq {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
+/*About  features*/
+
+.about{
+    height: 60vh;
 }
 
-#faq h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 32px;
-}
-
-.faq-list {
+#about {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
-
-.faq-item {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.faq-item:hover {
-    background-color: #f9f9f9;
-}
-
-.faq-question {
-    padding: 15px;
-    background-color: #f0f0f0;
-    font-weight: bold;
-}
-
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-}
-
-.faq-answer.active {
-    max-height: 150px; 
-    padding: 15px;
-    border-top: 1px solid #ccc;
-    background-color: #fff;
-}
-
-/*bottom features*/
-#bottom {
-    padding: 20px;
-    background-color: #f0f0f0;
-    text-align: center;
-}
-
-.contact-info {
-    margin-bottom: 20px;
-}
-
-.contact-info h2 {
-    margin-bottom: 10px;
-    font-size: 24px;
-}
-
-.contact-info p {
-    margin: 5px 0;
-    font-size: 16px;
-}
-
-.map {
-    display: flex;
-    justify-content: center;
-}
-
-.map iframe {
-    border: none;
-    width: 100%;
-    max-width: 600px;
-    height: 450px;
-}
-
-
-
-/*about features*/
-
-.about {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
     padding: 20px;
     position: relative;
 }
+
 
 .main-text {
     font: bold 36px/1.2 'Arial', sans-serif;
@@ -337,6 +265,101 @@ header {
     animation: popUp 2s forwards;
 }
 
+
+/*faq features*/
+.faq{
+    height: 60vh;
+}
+
+
+#faq {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+#faq h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.faq-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.faq-item:hover {
+    background-color: #f9f9f9;
+}
+
+.faq-question {
+    padding: 15px;
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-answer.active {
+    max-height: 150px; 
+    padding: 15px;
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+}
+
+/*bottom features*/
+.bottom{
+    height: 15vh;
+}
+
+#bottom {
+    text-align: center;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+}
+
+.contact-info h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.map {
+    display: flex;
+    justify-content: center;
+}
+
+.map iframe {
+    border: none;
+    width: 100%;
+    max-width: 600px;
+    height: 450px;
+}
+
+
+
+
 /*header features*/
 /* .transparent-header {
     
@@ -356,6 +379,7 @@ header {
   .nav-container a,
   .login-button {
     transition: transform 0.3s ease, color 0.3s ease; 
+    z-index: 10;
   }
   
   .logo.hovered,
@@ -363,10 +387,12 @@ header {
   .login-button.hovered {
     transform: scale(1.1);
     color: #f00; 
+    z-index: 10
   }
 
   .nav-container a {
     margin: 0 15px; 
+    z-index: 10
   }
   /**/
 
@@ -434,9 +460,8 @@ section {
 
 footer {
     background-color: #343A40;
-    color: #fff;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
 }
 
 
