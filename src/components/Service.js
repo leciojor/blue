@@ -36,6 +36,30 @@ const Service = () => {
                     <img src="image3.jpg" alt="Service 3" />
                     <button onClick={() => handleButtonClick('Service 3 Details')}>More Info</button>
                 </div>
+                <div className="service-component">
+                    <img src="image3.jpg" alt="Service 3" />
+                    <button onClick={() => handleButtonClick('Service 3 Details')}>More Info</button>
+                </div>
+                <div className="service-component">
+                    <img src="image3.jpg" alt="Service 3" />
+                    <button onClick={() => handleButtonClick('Service 3 Details')}>More Info</button>
+                </div>
+                <div className="service-component">
+                    <img src="image3.jpg" alt="Service 3" />
+                    <button onClick={() => handleButtonClick('Service 3 Details')}>More Info</button>
+                </div>
+                <div className="service-component">
+                    <img src="image3.jpg" alt="Service 3" />
+                    <button onClick={() => handleButtonClick('Service 3 Details')}>More Info</button>
+                </div>
+                <div className="service-component">
+                    <img src="image3.jpg" alt="Service 3" />
+                    <button onClick={() => handleButtonClick('Service 3 Details')}>More Info</button>
+                </div>
+                <div className="service-component">
+                    <img src="image3.jpg" alt="Service 3" />
+                    <button onClick={() => handleButtonClick('Service 3 Details')}>More Info</button>
+                </div>
                 <button className="nav-button right" onClick={() => handleScroll('right')}>&gt;</button>
             </div>
             {popupContent && (

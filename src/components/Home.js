@@ -1,20 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Home = () => {
+    const [hoveredElement, setHoveredElement] = useState(null);
+
     return (
         <section id="home" className='home'>
-            <div className="center-content">
-                <img src="https://raw.githubusercontent.com/leciojor/blue/main/src/components/imgs/Blue%20INK.png" 
+            <div 
+            className={`center-content ${hoveredElement === 'center-content' ? 'hovered' : ''}`}
+            onMouseEnter={() => setHoveredElement('center-content')}
+            onMouseLeave={() => setHoveredElement(null)}
+            >
+                <img src="https://raw.githubusercontent.com/leciojor/blue/4e107852863ad8105ef955c3c8db34cc657c9d84/src/components/imgs/Blue%20INK%20(3).svg" 
                     alt="Main Title" className="main-title" />
                 <button 
                     className="redirect-button" 
                     onClick={() => window.location.href = 'http://example.com'}
                 >
-                    Go to Link
+                    CONTATO
                 </button>
             </div>
-            <img src='https://raw.githubusercontent.com/leciojor/blue/b139a04fb34ed90db2bd4653f17cb633a40798f0/src/components/imgs/7.svg' alt="Printer" className="printer bottom-left" />
-            <img src='https://raw.githubusercontent.com/leciojor/blue/b139a04fb34ed90db2bd4653f17cb633a40798f0/src/components/imgs/6.svg' alt="Printer" className="printer top-right" />
+            <img src='https://raw.githubusercontent.com/leciojor/blue/ac7856d48b0be67e695dc33ff7ffb47bc5b81767/src/components/imgs/9.svg' alt="Printer" className="printer bottom-left" />
+            <img src='https://raw.githubusercontent.com/leciojor/blue/ac7856d48b0be67e695dc33ff7ffb47bc5b81767/src/components/imgs/8.svg' alt="Printer" className="printer top-right" />
         </section>
     );
 };

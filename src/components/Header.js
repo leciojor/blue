@@ -30,7 +30,9 @@ const Header = () => {
         onMouseEnter={() => setHoveredElement('login')}
         onMouseLeave={() => setHoveredElement(null)}
       >
-        <a href="#login">Login</a>
+        <button className="login-button" onClick={() => window.location.href = 'http://example.com'}>
+            <img src="https://raw.githubusercontent.com/leciojor/blue/main/src/components/imgs/logo-wa.png" class="whats" />           
+        </button>
       </div>
     </header>
   );

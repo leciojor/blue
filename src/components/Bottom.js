@@ -4,7 +4,7 @@ const Bottom = () => {
     return (
         <section id="bottom">
             <div className="contact-info">
-                <h2>Contact Us</h2>
+                <h2>Endereço e contato</h2>
                 <p>123 Main Street, Anytown, USA</p>
                 <p>Email: info@example.com</p>
                 <p>Phone: (123) 456-7890</p>
