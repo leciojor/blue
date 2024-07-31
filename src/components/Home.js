@@ -16,7 +16,7 @@ const Home = () => {
                     className="redirect-button" 
                     onClick={() => window.location.href = 'http://example.com'}
                 >
-                    CONTATO
+                    AGENDAR REUNIÃO
                 </button>
             </div>
             <img src='https://raw.githubusercontent.com/leciojor/blue/ac7856d48b0be67e695dc33ff7ffb47bc5b81767/src/components/imgs/9.svg' alt="Printer" className="printer bottom-left" />

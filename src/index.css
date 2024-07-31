@@ -1,58 +1,138 @@
 /* Mobile devices (up to 600px) */
 @media (max-width: 600px) {
+    .Logo {
+        width: 85px;
+        height: auto;
+        z-index: 1;
+        display: block; 
+      }
+
+      .login-button {
+        position: relative;
+        z-index: 300;
+        width: 80px;
+        height: 80px;
+        display: block; 
+        margin-right: 15px;
+      }
+
+      .whats{
+        width: 70px;
+        height: auto;
+      }
+    
+
     .main-title {
         width: 450px; 
         height: auto;
+        animation: fadeIn 2s ease-in-out;
+
     }
     .printer {
-        position: absolute;
+        
         width: 450px; 
         height: auto;
+        z-index: 1;
+        animation: fadeIn 2s ease-in-out;
+
+
+    }
+
+    .Printer {
+        z-index: 1;
     }
 
     .redirect-button {
-        padding: 10px 20px;
-        display: block;
         font-size: 16px;
+        font-family: "Lucida Console", "Courier New", monospace;
         background-color: #00121b; 
         color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
         text-align: center; 
-        text-decoration: none; 
         transition: background-color 0.3s ease;
-        width: 150px;
+        width: 100px;
         height: auto;
+        animation: fadeIn 2s ease-in-out;
+        transform: translateY(-50px);
+
     }
+
+    #home {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px; 
+        margin-bottom: 100px;
+    }
+
+    
+    
 }
 
 /* Tablets and small desktops (601px to 1024px) */
 @media (min-width: 601px) and (max-width: 1024px) {
+
+    .Logo {
+        width: 185px;
+        height: auto;
+        z-index: 1;
+        display: block; 
+      }
+
+      .login-button {
+        position: relative;
+        z-index: 300;
+        width: 175px;
+        height: auto;
+        display: block; 
+        margin-right: 15px;
+      }
+
+      .whats{
+        width: 100px;
+        height: auto;
+      }
+    
+    
     .main-title {
         width: 600px; 
         height: auto;
+        animation: fadeIn 2s ease-in-out;
+
     }
     .printer {
-        position: absolute;
         width: 500px; 
         height: auto;
+        z-index: 1;
+        animation: fadeIn 2s ease-in-out;
+
     }
 
+    .Printer {
+        z-index: 1;
+    }
+
+
     .redirect-button {
-        padding: 10px 20px;
-        display: block;
         font-size: 16px;
+        font-family: "Lucida Console", "Courier New", monospace;
         background-color: #00121b; 
         color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
         text-align: center; 
-        text-decoration: none; 
         transition: background-color 0.3s ease;
-        width: 250px;
+        width: 150px;
         height: auto;
+        animation: fadeIn 2s ease-in-out;
+
+    }
+
+    #home {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px; 
+        margin-bottom: 100px;
     }
 }
 
@@ -60,37 +140,87 @@
 
 /* Large desktops (1025px and up) */
 @media (min-width: 1025px) {
+    .Logo {
+        margin-top: -100px;
+        margin-bottom: -100px;
+        width: 290px;
+        height: auto;
+        z-index: 1;
+        display: block; 
+        box-sizing: border-box;
+        border: none;
+      }
+
+      .login-button {
+        margin-top: 10px;
+        position: relative;
+        z-index: 300;
+        width: 350px;
+        height: auto;
+        display: block; 
+        margin-right: 15px;
+      }
+
+      .whats{
+        width: 100px;
+        height: auto;
+      }
+    
+    
+
     .main-title {
         width: 1000px; 
         height: auto;
+        animation: fadeIn 2s ease-in-out;
+        transform: translateY(-50px);
     }
     .printer {
-        position: absolute;
         width: 770px; 
         height: auto;
+        z-index: 1;
+        animation: fadeIn 2s ease-in-out;
+
     }
 
+    .Printer {
+        z-index: 1;
+    }
+
+
     .redirect-button {
-        padding: 10px 20px;
-        display: block;
         font-size: 16px;
+        font-family: "Lucida Console", "Courier New", monospace;
         background-color: #00121b; 
         color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
         text-align: center; 
-        text-decoration: none; 
         transition: background-color 0.3s ease;
-        width: 500px;
+        width: 250px;
         height: auto;
+        animation: fadeIn 2s ease-in-out;
+        transform: translateY(-120px);    }
+
+    #home {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 70px; 
+        margin-bottom: 100px;
     }
 }
 
 
 /*keyframes*/
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 
-
+  
 @keyframes popUp {
     0% {
         transform: scale(0);
@@ -117,7 +247,6 @@ html, body {
     height: 100%;
     background: linear-gradient(180deg,  #0a0e0f, #15668f, #e71fab, #e3d100);
     background-size: 400% 400%;
-    /* animation: gradientBackground 20s infinite; */
   }  
 
 
@@ -125,15 +254,6 @@ html, body {
 /*home features*/
 .home{
     height: 70vh;
-}
-
-#home {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px; 
-    margin-bottom: 100px;
 }
 
 .center-content {
@@ -165,6 +285,8 @@ html, body {
 
 .printer {
     position: absolute;
+    z-index: 1;
+
 }
 
 
@@ -172,9 +294,11 @@ html, body {
     bottom: 0;
     left: 0;
     transform: translate(-20%, 20%); 
+    z-index: 1;
 }
 
 .top-right {
+    z-index: 1;
     top: 0;
     right: 0;
     transform: translate(20%, -20%); 
@@ -186,13 +310,14 @@ body {
     padding: 0;
 }
 
-header {
+.transparent-header {
+    display: flex;
     background-color:transparent;
     color: #fff;
-    padding: 20px;
-    text-align: center;
-    margin-bottom: 40px;
-    z-index: 1000;
+    align-items: center;
+    justify-content: space-between; 
+    position: relative; 
+    z-index: 300;
 }
 /*Service features*/
 .service{
@@ -225,7 +350,6 @@ header {
 
 
 .nav-button {
-    position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5);
@@ -290,7 +414,6 @@ header {
     font: bold 36px/1.2 'Arial', sans-serif;
     margin-bottom: 20px;
     text-align: center;
-    animation: popUp 2s forwards;
 }
 
 .bottom-container {
@@ -303,7 +426,6 @@ header {
 .about-text {
     flex: 1;
     font-size: 15px;
-    animation: popUp 2s forwards;
     overflow: auto; 
 }
 
@@ -312,7 +434,6 @@ header {
     display: flex;
     flex-direction: column; 
     gap: 20px;
-    animation: popUp 2s forwards;
 }
 
 .rectangle {
@@ -324,12 +445,10 @@ header {
     justify-content: center;
     border: 1px solid #ccc;
     border-radius: 8px;
-    animation: popUp 2s forwards;
 }
 
 .rectangle p {
     margin: 0;
-    animation: popUp 2s forwards;
 }
 
 
@@ -426,19 +545,16 @@ header {
 
 
 /*header features*/
-/* .transparent-header {
     
-  } */
   
-  .logo{
-    position: absolute;
-    left: 50px; 
-  }  
-
-  .login-button {
-    position: fixed;
-    right: 50px;
+  .logo {
+    margin-top: -20px;
+    margin: 0; 
+    flex: 0 0 auto;
+    z-index: 1;
+    transition: transform 0.3s ease, color 0.3s ease;
   }
+  
 
   .logo,
   .nav-container a,
@@ -447,7 +563,6 @@ header {
   .nav-container a[href='#impressoras'],
   .nav-container a[href='#perguntas-frequentes'] {
     transition: transform 0.3s ease, color 0.3s ease; 
-    z-index: 50;
   }
   
   .logo.hovered,
@@ -457,20 +572,23 @@ header {
   .nav-container a[href='#impressoras'].hovered,
   .nav-container a[href='#perguntas-frequentes'].hovered {
     transform: scale(1.1);
-    color: #f00; 
-    z-index: 50;
+    z-index: 300;
+  }
+
+  .nav-container{
+    flex: 1;
+    display: flex;
+    justify-content: center; 
   }
 
   .nav-container a {
-    margin: 0 15px; 
-    z-index: 50;
+    text-decoration: none;
+    justify-content: center; 
+    margin: 0 27px; 
     color: #ccc;
   }
 
-  .whats{
-    width: 30px;
-    height: auto;
-  }
+
 
   /**/
 

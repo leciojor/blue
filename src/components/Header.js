@@ -10,7 +10,7 @@ const Header = () => {
         onMouseEnter={() => setHoveredElement('logo')}
         onMouseLeave={() => setHoveredElement(null)}
       >
-        <img src="logo.png" alt="Logo" />
+        <img src="https://raw.githubusercontent.com/leciojor/blue/fa5e63ff1b8c0ae161ffbadab542968f005f65ab/src/components/imgs/Blue%20INK%20(4).svg" className="Logo" />
       </div>
       <nav className="nav-container">
         {['Sobre nós', 'Impressoras', 'Perguntas frequentes'].map((item) => (
