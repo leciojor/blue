@@ -4,8 +4,11 @@ const About = () => {
     const [mainText, setMainText] = useState('');
     const [aboutText, setAboutText] = useState('');
     const [showCursor, setShowCursor] = useState(true);
-    const [isTypingComplete, setIsTypingComplete] = useState(false);
+    const [isMainTypingComplete, setIsMainTypingComplete] = useState(false);
+    const [isAboutTypingComplete, setIsAboutTypingComplete] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
+    const [showRectangles, setShowRectangles] = useState(false);
+    const [rectanglesInPosition, setRectanglesInPosition] = useState(false);
     const sectionRef = useRef(null);
 
     const fullMainText = 'Alugando impressoras desde 2020...';
@@ -40,30 +43,46 @@ const About = () => {
 
         let mainIndex = 0;
         let aboutIndex = 0;
-        let pauseCounter = 0;
 
-        const typeText = () => {
+        const typeMainText = () => {
             if (mainIndex < fullMainText.length) {
                 setMainText(fullMainText.slice(0, mainIndex + 1));
                 mainIndex++;
-            } else if (aboutIndex < fullAboutText.length) {
-                if (pauseCounter < 10) {
-                    pauseCounter++;
-                } else {
-                    setAboutText(fullAboutText.slice(0, aboutIndex + 1));
-                    aboutIndex++;
-                }
             } else {
-                setIsTypingComplete(true);
-                clearInterval(interval);
+                setIsMainTypingComplete(true);
+                clearInterval(mainInterval);
+                startAboutTyping();
             }
         };
 
-        const interval = setInterval(typeText, 39);
+        const typeAboutText = () => {
+            if (aboutIndex < fullAboutText.length) {
+                setAboutText(fullAboutText.slice(0, aboutIndex + 1));
+                aboutIndex++;
+            } else {
+                setIsAboutTypingComplete(true);
+                clearInterval(aboutInterval);
+                animateRectangles();
+            }
+        };
+
+        const startAboutTyping = () => {
+            aboutInterval = setInterval(typeAboutText, 9);
+        };
+
+        const animateRectangles = () => {
+            setShowRectangles(true);
+            setTimeout(() => setRectanglesInPosition(true), 100);
+        };
+
+        let mainInterval = setInterval(typeMainText, 60);
+        let aboutInterval;
+
         const cursorInterval = setInterval(() => setShowCursor(prev => !prev), 500);
 
         return () => {
-            clearInterval(interval);
+            clearInterval(mainInterval);
+            clearInterval(aboutInterval);
             clearInterval(cursorInterval);
         };
     }, [isVisible]);
@@ -77,29 +96,29 @@ const About = () => {
                     <div className="main-text">
                         <h1 className='abouth'>
                             {mainText}
-                            {showCursor && !isTypingComplete && <span className="cursor">|</span>}
+                            {showCursor && !isMainTypingComplete && <span className="cursor">|</span>}
                         </h1>
                     </div>
                     <div className="about-text">
                         &ensp;{aboutText}
-                        {showCursor && !isTypingComplete && mainText === fullMainText && <span className="cursor">|</span>}
+                        {showCursor && !isAboutTypingComplete && isMainTypingComplete && <span className="cursor">|</span>}
                     </div>
                 </div>
                 <div className='bottom-container'>
-                    <div className="rectangular-components">
-                        <div className={`rectangle ${hoveredElement === 'rectangle' ? 'hovered_' : ''}`}
-            onMouseEnter={() => setHoveredElement('rectangle')}
-            onMouseLeave={() => setHoveredElement(null)}>
+                    <div className={`rectangular-components ${showRectangles ? 'show' : ''} ${rectanglesInPosition ? 'in-position' : ''}`}>
+                        <div className={`rectangle ${hoveredElement === 'rectangle1' ? 'hovered_' : ''}`}
+                            onMouseEnter={() => setHoveredElement('rectangle1')}
+                            onMouseLeave={() => setHoveredElement(null)}>
                             <p>Sample text 1</p>
                         </div>
-                        <div className={`rectangle ${hoveredElement === 'rectangle' ? 'hovered_' : ''}`}
-            onMouseEnter={() => setHoveredElement('rectangle')}
-            onMouseLeave={() => setHoveredElement(null)}>
+                        <div className={`rectangle ${hoveredElement === 'rectangle2' ? 'hovered_' : ''}`}
+                            onMouseEnter={() => setHoveredElement('rectangle2')}
+                            onMouseLeave={() => setHoveredElement(null)}>
                             <p>Sample text 2</p>
                         </div>
-                        <div className={`rectangle ${hoveredElement === 'rectangle' ? 'hovered_' : ''}`}
-            onMouseEnter={() => setHoveredElement('rectangle')}
-            onMouseLeave={() => setHoveredElement(null)}>
+                        <div className={`rectangle ${hoveredElement === 'rectangle3' ? 'hovered_' : ''}`}
+                            onMouseEnter={() => setHoveredElement('rectangle3')}
+                            onMouseLeave={() => setHoveredElement(null)}>
                             <p>Sample text 3</p>
                         </div>
                     </div>

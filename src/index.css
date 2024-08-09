@@ -64,6 +64,107 @@
         margin-bottom: 100px;
     }
 
+            /*About  features*/
+
+            #Sobre\ nós.about {
+                position: relative;
+                width: 100%;
+                padding: 20px;
+                margin-bottom: 180px;
+        
+            }
+            
+            .content-wrapper {
+                display: flex;
+                flex-direction: column;
+                height: 50%;
+            }
+            
+            .text-content {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            
+            .main-text {
+                font-size: 5vw;
+                line-height: 1.2;
+                text-align: center;
+                width: 100%;
+                transition: text-shadow 0.3s ease;
+                animation: pulsatingShadow 3s ease-in-out infinite;
+            }
+            
+            .about-text {
+                display: block;
+                width: 80%;                   
+                margin: 100px auto;               
+                font-size: 3vw;
+                line-height: 2;
+                text-align: justify;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.651);
+                transition: text-shadow 0.3s ease;
+                min-height: 400px; 
+            }
+            
+            .bottom-container {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: nowrap;
+                margin-top: 20px;
+            }
+            
+            .rectangular-components {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                opacity: 0;
+                transform: scale(0.5);
+                transition: opacity 0.5s ease, transform 0.5s ease;
+            }
+            
+            .rectangular-components.show {
+                opacity: 1;
+                transform: scale(1);
+            }
+            
+            .rectangular-components.in-position .rectangle:nth-child(1) {
+                transform: translateX(-7%);
+            }
+            
+            .rectangular-components.in-position .rectangle:nth-child(3) {
+                transform: translateX(7%);
+            }
+            
+            .rectangle {
+                width: 150px;
+                height: 150px; 
+                background-color: #ccc;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-shadow: 2px 2px 4px rgb(0, 0, 0);
+                transition: all 0.8s ease;
+                margin: 0 10px;
+                transform: translateX(0);
+            }
+            
+            .rectangle.hovered_{
+                transform: scale(1.1)  !important;
+            }
+            
+            .rectangle p {
+                text-align: center;
+                font-size: 1.5em;
+                color: #333;
+            }
+    
+
     
     
 }
@@ -132,6 +233,109 @@
         margin-top: 10px; 
         margin-bottom: 100px;
     }
+
+        /*About  features*/
+
+        #Sobre\ nós.about {
+            position: relative;
+            width: 100%;
+            padding: 20px;
+            margin-bottom: 180px;
+    
+        }
+        
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            height: 50%;
+        }
+        
+        .text-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .main-text {
+            font-size: 3.5vw;
+            line-height: 1.2;
+            text-align: center;
+            width: 100%;
+            transition: text-shadow 0.3s ease;
+            animation: pulsatingShadow 3s ease-in-out infinite;
+        }
+        
+        .about-text {
+            display: block;
+            width: 55%;                   
+            margin: 100px auto;               
+            font-size: 2.5vw;
+            line-height: 2;
+            text-align: justify;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.651);
+            transition: text-shadow 0.3s ease;
+            min-height: 400px; 
+        }
+        
+        .bottom-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+            margin-top: 20px;
+        }
+        
+        .rectangular-components {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .rectangular-components.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .rectangular-components.in-position .rectangle:nth-child(1) {
+            transform: translateX(-45%);
+        }
+        
+        .rectangular-components.in-position .rectangle:nth-child(3) {
+            transform: translateX(45%);
+        }
+        
+        .rectangle {
+            width: 230px;
+            height: 230px; 
+            background-color: #ccc;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 2px 2px 4px rgb(0, 0, 0);
+            transition: all 0.8s ease;
+            margin: 0 10px;
+            transform: translateX(0);
+        }
+        
+        .rectangle.hovered_{
+            transform: scale(1.1)  !important;
+        }
+        
+        .rectangle p {
+            text-align: center;
+            font-size: 1.5em;
+            color: #333;
+        }
+    
+    
+
 }
 
 
@@ -141,7 +345,7 @@
     .Logo {
         margin-top: -100px;
         margin-bottom: -100px;
-        width: 290px;
+        width: 250px;
         height: auto;
         z-index: 1;
         display: block; 
@@ -212,16 +416,14 @@
     #Sobre\ nós.about {
         position: relative;
         width: 100%;
-        height: auto;
         padding: 20px;
         margin-bottom: 180px;
-        
+
     }
     
     .content-wrapper {
         display: flex;
         flex-direction: column;
-        height: 100%;
     }
     
     .text-content {
@@ -232,7 +434,7 @@
     }
     
     .main-text {
-        font-size: 2.0vw;
+        font-size: 2.2vw;
         line-height: 1.2;
         text-align: center;
         width: 100%;
@@ -243,8 +445,8 @@
     .about-text {
         display: block;
         width: 40%;                   
-        margin: 100 auto;               
-        font-size: 1.5vw;
+        margin: 100px auto;               
+        font-size: 1.2vw;
         line-height: 2;
         text-align: justify;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.651);
@@ -255,7 +457,7 @@
     .bottom-container {
         position: relative;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
         flex-wrap: nowrap;
         margin-top: 20px;
@@ -263,8 +465,25 @@
     
     .rectangular-components {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
+        align-items: center;
         width: 100%;
+        opacity: 0;
+        transform: scale(0.5);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    
+    .rectangular-components.show {
+        opacity: 1;
+        transform: scale(1);
+    }
+    
+    .rectangular-components.in-position .rectangle:nth-child(1) {
+        transform: translateX(-100%);
+    }
+    
+    .rectangular-components.in-position .rectangle:nth-child(3) {
+        transform: translateX(80%);
     }
     
     .rectangle {
@@ -276,11 +495,13 @@
         align-items: center;
         justify-content: center;
         text-shadow: 2px 2px 4px rgb(0, 0, 0);
-        transition: text-shadow 0.3s ease;
+        transition: all 0.8s ease;
+        margin: 0 10px;
+        transform: translateX(0);
     }
-
+    
     .rectangle.hovered_{
-        transform: scale(1.1);
+        transform: scale(1.1)  !important;
     }
     
     .rectangle p {
@@ -288,15 +509,7 @@
         font-size: 1.5em;
         color: #333;
     }
-    
-    .cursor {
-        display: inline-block;
-        width: 2px;
-        height: 1em;
-        background-color: #000;
-        animation: blink 0.7s infinite;
-        vertical-align: middle;
-    }
+
     
 }
 
@@ -353,27 +566,9 @@
 
 
 /*general section configs*/
-@font-face {
-    font-family: 'Ranade';
-    src: url('../fonts/Ranade-Regular.woff2') format('woff2'),
-         url('../fonts/Ranade-Regular.woff') format('woff'),
-         url('../fonts/Ranade-Regular.ttf') format('truetype');
-    font-weight: 400; 
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Ranade';
-    src: url('../fonts/Ranade-Bold.woff2') format('woff2'),
-         url('../fonts/Ranade-Bold.woff') format('woff'),
-         url('../fonts/Ranade-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-}
-
 
 html, body {
-    font-family: 'Ranade', Arial, sans-serif;
+    font-family: 'Ranade', sans-serif;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -381,14 +576,7 @@ html, body {
     background-size: 400% 400%;
   }  
 
-  .cursor {
-    display: inline-block;
-    width: 2px;
-    height: 1em;
-    background-color: #000;
-    animation: blink 0.7s infinite;
-    vertical-align: middle;
-}
+
 
 /*home features*/
 .home{
