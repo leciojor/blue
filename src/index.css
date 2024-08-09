@@ -353,6 +353,25 @@
 
 
 /*general section configs*/
+@font-face {
+    font-family: 'Ranade';
+    src: url('../fonts/Ranade-Regular.woff2') format('woff2'),
+         url('../fonts/Ranade-Regular.woff') format('woff'),
+         url('../fonts/Ranade-Regular.ttf') format('truetype');
+    font-weight: 400; 
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ranade';
+    src: url('../fonts/Ranade-Bold.woff2') format('woff2'),
+         url('../fonts/Ranade-Bold.woff') format('woff'),
+         url('../fonts/Ranade-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
 html, body {
     font-family: 'Ranade', Arial, sans-serif;
     margin: 0;
