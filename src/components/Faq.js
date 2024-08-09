@@ -9,22 +9,22 @@ const Faq = () => {
 
     const faqData = [
         {
-            question: "What is your return policy?",
-            answer: "Our return policy allows you to return products within 30 days of purchase with a full refund."
+            question: "orem ipsum dolor sit amet, consectetur adipiscing elit,?",
+            answer: "laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure ."
         },
         {
-            question: "How do I track my order?",
-            answer: "You can track your order by logging into your account and visiting the 'Orders' section."
+            question: "orem ipsum dolor sit amet, consectetur adipiscing elit,?",
+            answer: "laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure ."
         },
         {
-            question: "Do you offer customer support?",
-            answer: "Yes, we offer 24/7 customer support. You can reach us via email, phone, or live chat."
+            question: "orem ipsum dolor sit amet, consectetur adipiscing elit,?",
+            answer: "laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure ."
         }
     ];
 
     return (
         <section id="Perguntas frequentes" className='faq'>
-            <h2>Frequently Asked Questions</h2>
+            <h1 className='faqh'>Perguntas frequentes</h1>
             <div className="faq-list">
                 {faqData.map((faq, index) => (
                     <div key={index} className="faq-item">

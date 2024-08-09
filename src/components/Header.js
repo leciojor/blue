@@ -5,6 +5,7 @@ const Header = () => {
 
   return (
     <header className="transparent-header">
+
       <div
         className={`logo ${hoveredElement === 'logo' ? 'hovered' : ''}`}
         onMouseEnter={() => setHoveredElement('logo')}
