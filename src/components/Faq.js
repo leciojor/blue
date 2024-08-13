@@ -22,9 +22,10 @@ const Faq = () => {
         }
     ];
 
+
     return (
         <section id="Perguntas frequentes" className='faq'>
-            <h1 className='faqh'>Perguntas frequentes</h1>
+            <h1 class='faqh'>Perguntas frequentes</h1>
             <div className="faq-list">
                 {faqData.map((faq, index) => (
                     <div key={index} className="faq-item">

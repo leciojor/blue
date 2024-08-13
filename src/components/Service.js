@@ -1,72 +1,53 @@
 import React, { useState, useRef } from 'react';
 
 const Service = () => {
-    const [popupContent, setPopupContent] = useState(null);
-    const scrollRef = useRef(null);
+    const [selectedPrinter, setSelectedPrinter] = useState(null);
+    const [hoveredElement, setHoveredElement] = useState(null);
+    const scrollContainerRef = useRef(null);
 
-    const handleScroll = (direction) => {
-        if (direction === 'left') {
-            scrollRef.current.scrollLeft -= 200;
-        } else {
-            scrollRef.current.scrollLeft += 200;
+    const printers = [
+        { id: 1, name: 'Printer Model A', description: 'High-speed, multi-function printer suitable for office use.', image: 'https://raw.githubusercontent.com/leciojor/blue/9528b81db1c5f891b7e209e602cd8f86b410a4fe/src/components/imgs/Blue%20INK%20(6).svg' },
+        { id: 2, name: 'Printer Model B', description: 'Compact, energy-efficient printer for home offices.', image: 'https://raw.githubusercontent.com/leciojor/blue/9528b81db1c5f891b7e209e602cd8f86b410a4fe/src/components/imgs/Blue%20INK%20(6).svg' },
+        { id: 3, name: 'Printer Model C', description: 'Professional-grade printer with advanced color management.', image: 'https://raw.githubusercontent.com/leciojor/blue/9528b81db1c5f891b7e209e602cd8f86b410a4fe/src/components/imgs/Blue%20INK%20(6).svg' },
+        { id: 4, name: 'Printer Model D', description: 'Large format printer for posters and banners.', image: 'https://raw.githubusercontent.com/leciojor/blue/9528b81db1c5f891b7e209e602cd8f86b410a4fe/src/components/imgs/Blue%20INK%20(6).svg' },
+        { id: 5, name: 'Printer Model E', description: 'All-in-one printer with scanning and faxing capabilities.', image: 'https://raw.githubusercontent.com/leciojor/blue/9528b81db1c5f891b7e209e602cd8f86b410a4fe/src/components/imgs/Blue%20INK%20(6).svg' },
+        { id: 6, name: 'Printer Model F', description: 'All-in-one printer with scanning and faxing capabilities.', image: 'https://raw.githubusercontent.com/leciojor/blue/9528b81db1c5f891b7e209e602cd8f86b410a4fe/src/components/imgs/Blue%20INK%20(6).svg' },
+    ];
+
+    const scroll = (direction) => {
+        if (scrollContainerRef.current) {
+            const scrollAmount = 300;
+            scrollContainerRef.current.scrollBy({
+                left: direction === 'left' ? -scrollAmount : scrollAmount,
+                behavior: 'smooth'
+            });
         }
-    };
-
-    const handleButtonClick = (content) => {
-        setPopupContent(content);
-    };
-
-    const closePopup = () => {
-        setPopupContent(null);
     };
 
     return (
         <section id="Impressoras" className='service'>
-            <div className="horizontal-scroll" ref={scrollRef}>
-                <button className="nav-button left" onClick={() => handleScroll('left')}>&lt;</button>
-                <div className="service-component">
-                    <img src="image1.jpg" alt="Service 1" />
-                    <button onClick={() => handleButtonClick('Service 1 Details')}>More Info</button>
+            <div className="scroll-container">
+                <button className="scroll-button left" onClick={() => scroll('left')}>&lt;</button>
+                <div className="printer-container" ref={scrollContainerRef}>
+                    {printers.map((printer) => (
+                        <div key={printer.id} className={`printer-item ${hoveredElement === printer.id ? 'hovered3' : ''}`}
+                        onMouseEnter={() => setHoveredElement(printer.id)}
+                        onMouseLeave={() => setHoveredElement(null)}>
+                                <h3>{printer.name}</h3>
+                                <img src={printer.image} alt={printer.name} className="printer-image" />
+                            <button className='print-info' onClick={() => setSelectedPrinter(printer)}>Info</button>
+                        </div>
+                    ))}
                 </div>
-                <div className="service-component">
-                    <img src="image2.jpg" alt="Service 2" />
-                    <button onClick={() => handleButtonClick('Service 2 Details')}>More Info</button>
-                </div>
-                <div className="service-component">
-                    <img src="image3.jpg" alt="Service 3" />
-                    <button onClick={() => handleButtonClick('Service 3 Details')}>More Info</button>
-                </div>
-                <div className="service-component">
-                    <img src="image3.jpg" alt="Service 3" />
-                    <button onClick={() => handleButtonClick('Service 3 Details')}>More Info</button>
-                </div>
-                <div className="service-component">
-                    <img src="image3.jpg" alt="Service 3" />
-                    <button onClick={() => handleButtonClick('Service 3 Details')}>More Info</button>
-                </div>
-                <div className="service-component">
-                    <img src="image3.jpg" alt="Service 3" />
-                    <button onClick={() => handleButtonClick('Service 3 Details')}>More Info</button>
-                </div>
-                <div className="service-component">
-                    <img src="image3.jpg" alt="Service 3" />
-                    <button onClick={() => handleButtonClick('Service 3 Details')}>More Info</button>
-                </div>
-                <div className="service-component">
-                    <img src="image3.jpg" alt="Service 3" />
-                    <button onClick={() => handleButtonClick('Service 3 Details')}>More Info</button>
-                </div>
-                <div className="service-component">
-                    <img src="image3.jpg" alt="Service 3" />
-                    <button onClick={() => handleButtonClick('Service 3 Details')}>More Info</button>
-                </div>
-                <button className="nav-button right" onClick={() => handleScroll('right')}>&gt;</button>
+                <button className="scroll-button right" onClick={() => scroll('right')}>&gt;</button>
             </div>
-            {popupContent && (
-                <div className="popup">
-                    <div className="popup-content">
-                        <span className="close" onClick={closePopup}>&times;</span>
-                        <p>{popupContent}</p>
+
+            {selectedPrinter && (
+                <div className="popup-overlay" onClick={() => setSelectedPrinter(null)}>
+                    <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+                        <h3>{selectedPrinter.name}</h3>
+                        <p>{selectedPrinter.description}</p>
+                        <button className="print-info" onClick={() => setSelectedPrinter(null)}>Fechar</button>
                     </div>
                 </div>
             )}

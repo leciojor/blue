@@ -93,7 +93,6 @@
                 text-align: center;
                 width: 100%;
                 transition: text-shadow 0.3s ease;
-                animation: pulsatingShadow 3s ease-in-out infinite;
             }
             
             .about-text {
@@ -170,7 +169,7 @@
 }
 
 /* Tablets and small desktops (601px to 1024px) */
-@media (min-width: 601px) and (max-width: 1024px) {
+@media (min-width: 601px) and (max-width: 1400px) {
 
     .Logo {
         width: 185px;
@@ -263,7 +262,6 @@
             text-align: center;
             width: 100%;
             transition: text-shadow 0.3s ease;
-            animation: pulsatingShadow 3s ease-in-out infinite;
         }
         
         .about-text {
@@ -341,7 +339,7 @@
 
 
 /* Large desktops (1025px and up) */
-@media (min-width: 1025px) {
+@media (min-width: 1400px) {
     .Logo {
         margin-top: -100px;
         margin-bottom: -100px;
@@ -439,7 +437,6 @@
         text-align: center;
         width: 100%;
         transition: text-shadow 0.3s ease;
-        animation: pulsatingShadow 3s ease-in-out infinite;
     }
     
     .about-text {
@@ -579,9 +576,6 @@ html, body {
 
 
 /*home features*/
-.home{
-    height: 70vh;
-}
 
 .center-content {
     text-align: center;
@@ -605,9 +599,6 @@ html, body {
 .center-content.hovered{
     transform: scale(1.1);
 }
-
-
-
 
 
 .printer {
@@ -642,36 +633,62 @@ html, body {
     z-index: 300;
 }
 /*Service features*/
-.service{
-    height: 40vh;
-}
 
-#service {
-    position: relative;
+.service {
     padding: 20px;
-    overflow: hidden;
+    position: relative;
+    overflow: hidden !important; 
 }
 
-.horizontal-scroll {
-    position: relative; 
-    display: flex; 
-    align-items: center;
-    overflow-x: auto; 
-}
-
-.service-component {
-    min-width: 200px;
-    margin: 0 10px;
-    text-align: center;
-}
-
-.service-component img {
+.scroll-container {
+    position: relative;
+    overflow: hidden !important; 
     width: 100%;
-    height: auto;
 }
 
+.printer-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding: 20px 0;
+}
 
-.nav-button {
+.printer-container::-webkit-scrollbar {
+    display: none;
+}
+
+.print-info{
+    font-family: 'Ranade', sans-serif;
+    font-size: 15px;
+
+}
+.printer-item.hovered3 {
+    transform: scale(1.1);
+}
+
+.printer-item {
+    flex: 0 0 auto;
+    width: 250px;
+    margin: 0 75px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.printer-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.scroll-button {
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5);
@@ -679,64 +696,52 @@ html, body {
     border: none;
     padding: 10px;
     cursor: pointer;
+    z-index: 1;
 }
 
-.nav-button.left {
+.scroll-button.left {
     left: 10px;
 }
 
-.nav-button.right {
+.scroll-button.right {
     right: 10px;
 }
 
-.popup {
+.popup-overlay {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    right: 0;
+    bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 }
 
 .popup-content {
     background-color: white;
     padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    width: 80%;
-    max-width: 500px;
+    border-radius: 5px;
+    max-width: 400px;
+    width: 100%;
 }
 
-.popup-content .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    cursor: pointer;
+.popup-image {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
-
-
-
-
 /*faq features*/
-.faq{
-    height: 60vh;
-}
 
-
-#faq {
+.faqh {
+    font-size: 3em !important; 
     padding: 20px;
-    margin: 0 auto;
-}
-
-
-#faq h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 32px;
+    margin: 0;
 }
 
 .faq-list {
